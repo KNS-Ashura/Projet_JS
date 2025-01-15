@@ -1,22 +1,43 @@
 
 
-const url = "http://img.omdbapi.com/?apikey=5c8a1596&";
+const url = "http://www.omdbapi.com/?apikey=5c8a1596&s=batman&page=1";
 
 fetch(url)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    return response.json();
-  })
+  .then(response => response.json())
   .then(data => {
-    console.log("Données reçues :", data);
+    if (data.Response === "True") {
+      data.Search.forEach(movie => {
 
-    // Exemple : Ajouter une image à la page
-    const imgElement = document.createElement('img');
-    imgElement.src = data.Poster;
-    document.body.appendChild(imgElement);
+        const newDiv = $('<div>', {
+          class: "Poster_section"
+        }).css({
+          border: "solid black 5px",
+          marginRight: "1.5em",
+          marginLeft: "1.5em",
+          marginTop: "1em",
+          marginBottom: "1em",
+          padding: "0%",
+          borderRadius: "10px",
+          overflow: "hidden"
+        });
+
+        const newPoster = $('<img>', {
+          src: movie.Poster,
+          alt: movie.Title,
+          class: 'Poster'
+        }).css({
+          width: "20em",
+          height: "25em",
+        });
+
+        newDiv.append(newPoster);
+        $('#main-container').append(newDiv);
+      });
+
+    } else {
+      console.error('Erreur dans les données:', data.Error);
+    }
   })
   .catch(error => {
-    console.error("Erreur lors du fetch :", error.message);
+    console.error('Erreur:', error);
   });
