@@ -1,6 +1,9 @@
+searchInput.addEventListener('input', (event) => {
+  const query = event.target.value;
 
+  console.log(query)
 
-const url = "http://www.omdbapi.com/?apikey=5c8a1596&s=joker&page=1";
+  const url = `http://www.omdbapi.com/?apikey=5c8a1596&s=${query}&page=1`;
 
 fetch(url)
   .then(response => response.json())
@@ -43,24 +46,4 @@ fetch(url)
   .catch(error => {
     console.error('Erreur:', error);
   });
-
-  document.querySelector('.input').addEventListener('focus', function () {
-    this.classList.add('click');
-});
-
-document.querySelector('.input').addEventListener('blur', function () {
-    this.classList.remove('click');
-});
-
-
-const searchInput = document.querySelector('.input');
-
-searchInput.addEventListener('click', () => {
-    searchInput.classList.add('open');
-});
-
-document.addEventListener('click', (event) => {
-    if (!searchInput.contains(event.target)) {
-        searchInput.classList.remove('open');
-    }
 });
