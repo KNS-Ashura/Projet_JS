@@ -128,3 +128,5 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+const url = `http://www.omdbapi.com/?apikey=5c8a1596&s=${query}&page=1`;
