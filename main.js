@@ -1,46 +1,52 @@
 import { generateMovieUrl } from './hide_key.js';
 
-searchInput.addEventListener("input", (event) => {
-
-  const title = event.target.value;
-
+function fetchMovies(title) {
   const url = generateMovieUrl(title);
   
   fetch(url)
-  .then((response) => response.json())
-  .then((data) => {
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.results && data.results.length > 0) {
+        $("#main-container").empty();
 
-    if (data.results && data.results.length > 0) {
+        data.results.forEach((movie) => {
+          const newDiv = $("<div>", {
+            class: "Poster_section",
+          });
 
-      $("#main-container").empty();
+          const newPoster = $("<img>", {
+            src: `https://image.tmdb.org/t/p/w500/${movie.poster_path}`,
+            alt: movie.title,
+            class: "Poster",
+          });
 
-      data.results.forEach((movie) => {
-        const newDiv = $("<div>", {
-          class: "Poster_section",
+          const newTitle = $("<a>", {
+            class: "Title",
+            href: `./page_html/Movie.html?movie_id=${movie.id}`, // Ajouter l'ID du film dans l'URL
+          }).text(movie.title);
+
+          newDiv.append(newPoster);
+          newDiv.append(newTitle);
+
+          $("#main-container").append(newDiv);
         });
+      } else {
+        console.error("Aucun résultat trouvé.");
+      }
+    })
+    .catch((error) => {
+      console.error("Erreur:", error);
+    });
+}
 
-        const newPoster = $("<img>", {
-          src: `https://image.tmdb.org/t/p/w500/${movie.poster_path}`,
-          alt: movie.title,
-          class: "Poster",
-        });
+fetchMovies("Avengers");
 
-        const newTitle = $("<a>", {
-          class: "Title",
-          href: "./page_html/Movie.html",
-        })
-          .text(movie.title);
+searchInput.addEventListener("input", (event) => {
+  const title = event.target.value;
 
-        newDiv.append(newPoster);
-        newDiv.append(newTitle);
-
-        $("#main-container").append(newDiv);
-      });
-    } else {
-      console.error("Aucun résultat trouvé.");
-    }
-  })
-  .catch((error) => {
-    console.error("Erreur:", error);
-  });
+  if (title.trim() === "") {
+    fetchMovies("Avengers");
+  } else {
+    fetchMovies(title);
+  }
 });
