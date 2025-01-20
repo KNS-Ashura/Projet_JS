@@ -1,39 +1,44 @@
 body {
-    background-color: #232323;
-    margin: 1.5%;
-    padding: 1.5%;
+    background-color: #1e1e1e;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    line-height: 1.6;
 }
 
 /*gestion du css pour le menu*/
 
-.menu {                                  
+.menu {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0;
     margin: 0;
     list-style-type: none;
-    background-color: #000000;
+    background-color: #141414;
+    border-bottom: 2px solid #333;
+    justify-content: center;
+    align-items: center;
 }
 
 .menu li {
-    flex: 1;
+    margin: 0 1rem;
 }
 
 .menu a {
     display: block;
     font-weight: bold;
-    padding: 1rem 0;
+    padding: 0.8rem 1rem;
     text-align: center;
-    color: #ffffff;
+    color: #ffa500;
     text-decoration: none;
-    background-image: radial-gradient(circle at center center, rgba(71,71,71, 0.88),rgb(8,8,8));
-    border: 1px solid #333333;
+    border-radius: 5px;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .menu a:hover {
-    background-color: #1a1a1a;
-    color: #ffa500;
+    background-color: #ffa500;
+    color: #141414;
 }
 
 /*gestion du css pour le titre du menu*/
@@ -44,29 +49,35 @@ div {
 }
 
 #top-title {
-    color: #ffffff;
+    color: #ffa500;
     text-align: center;
     background-color: #141414;
-    margin: 0%;
-    padding: 2%;
+    margin: 0;
+    padding: 1.5%;
+    font-size: 2rem;
+    border-bottom: 2px solid #333;
 }
 
 #all-head {
     overflow: hidden;
-    border: solid #ffffff27 3px;
+    border: solid #333 3px;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px #ffffff27;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+    max-width: 1200px;
+    background: linear-gradient(90deg, #1a1a1a, #141414);
+    padding: 1rem;
 }
 
-.search-container{
-    display: block;
-    font-weight: bold;
-    padding: 1rem 0;
-    text-align: center;
-    color: #ffffff;
-    text-decoration: none;
-    background-image: radial-gradient(circle at center center, rgba(71,71,71, 0.88),rgb(8,8,8));
-    border: 1px solid #333333;
-    transition: background-color 0.3s, color 0.3s;
-}
+/* css de la barre de recheche*/
 
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+    padding: 0.8rem 1rem;
+    background-color: #141414;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
+}

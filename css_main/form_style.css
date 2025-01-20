@@ -1,10 +1,10 @@
 #contact {
     max-width: 600px;
     margin: 2rem auto;
-    background: #141414;
+    background: #1a1a1a;
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
     color: #fff;
 }
 
@@ -12,12 +12,14 @@
     text-align: center;
     margin-bottom: 1.5rem;
     color: #ffa500;
+    font-size: 1.8rem;
 }
 
 form label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: bold;
+    color: #ddd;
 }
 
 form input,
@@ -25,11 +27,18 @@ form textarea {
     width: 100%;
     padding: 0.8rem;
     margin-bottom: 1rem;
-    border: 1px solid #333;
+    border: 1px solid #444;
     border-radius: 5px;
     background: #232323;
     color: #fff;
     font-size: 1rem;
+    transition: border 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #ffa500;
+    outline: none;
 }
 
 form input::placeholder,
@@ -47,9 +56,41 @@ form button {
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 form button:hover {
     background: #e59400;
+    transform: scale(1.02);
+}
+main
+#main-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.Poster_section {
+        border: solid black 5px;
+        margin-right: 1.5em;
+        margin-left: 1.5em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        padding: 0%;
+        border-radius: 10px;
+        overflow: hidden;
+}
+
+.Poster {
+    width: 20em;
+    height: 25em;
+    margin: 0;
+    padding: 0;
+}
+
+.Title {
+    font-size: 1em;
+    color: white;
+    justify-content: center;
 }
