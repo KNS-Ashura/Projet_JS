@@ -4,3 +4,27 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
+
+.Poster_section {
+        border: solid black 5px;
+        margin-right: 1.5em;
+        margin-left: 1.5em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        padding: 0%;
+        border-radius: 10px;
+        overflow: hidden;
+}
+
+.Poster {
+    width: 20em;
+    height: 25em;
+    margin: 0;
+    padding: 0;
+}
+
+.Title {
+    font-size: 1em;
+    color: white;
+    justify-content: center;
+}

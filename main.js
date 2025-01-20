@@ -14,37 +14,19 @@ searchInput.addEventListener("input", (event) => {
       data.results.forEach((movie) => {
         const newDiv = $("<div>", {
           class: "Poster_section",
-        }).css({
-          border: "solid black 5px",
-          marginRight: "1.5em",
-          marginLeft: "1.5em",
-          marginTop: "1em",
-          marginBottom: "1em",
-          padding: "0%",
-          borderRadius: "10px",
-          overflow: "hidden",
         });
 
         const newPoster = $("<img>", {
           src: `https://image.tmdb.org/t/p/w500/${movie.poster_path}`,
           alt: movie.title,
           class: "Poster",
-        }).css({
-          width: "20em",
-          height: "25em",
-          margin: "0%",
-          padding: "0%",
         });
 
-        const newTitle = $("<h2>", {
+        const newTitle = $("<a>", {
           class: "Title",
+          href: "./page_html/Movie.html",
         })
-          .text(movie.title)
-          .css({
-            fontSize: "1em",
-            color: "white",
-            justifyContent: "center",
-          });
+          .text(movie.title);
 
         newDiv.append(newPoster);
         newDiv.append(newTitle);
