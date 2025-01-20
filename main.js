@@ -1,9 +1,12 @@
+import { generateMovieUrl } from './hide_key.js';
 
 searchInput.addEventListener("input", (event) => {
 
   const title = event.target.value;
+
+  const url = generateMovieUrl(title);
   
-  fetch(`https://api.themoviedb.org/3/search/movie?api_key=fe05fa529a04b25c74b7594d3251d327&query=${encodeURIComponent(title)}`)
+  fetch(url)
   .then((response) => response.json())
   .then((data) => {
 

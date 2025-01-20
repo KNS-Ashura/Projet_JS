@@ -13,22 +13,14 @@
     <header>
         <div id="all-head">
             <h1 id="top-title">Ciné-phile</h1>
-            <div class="search-container">
-                <input type="text" class="input" placeholder="Rechercher..." id="searchInput">
-            </div>
-            <div class="results" id="results"></div>
             <section id="down_part">
                 <nav>
                     <ul class="menu">
                         <li>
-                            <a href="#lien_alaska">Alaska</a>
-                        </li>
-                        <li>
-                            <a href="#lien_safari">Safari</a>
-                        </li>
-                        <li>
-                            <a href="#lien_lieux_paradisiaque">Lieux paradisiaques
-                            </a>
+                            <div class="search-container">
+                                <input type="text" class="input" placeholder="Rechercher..." id="searchInput">
+                                <div class="results" id="results"></div>
+                            </div>
                         </li>
                         <li>
                             <a href="./page_html/Movie.html">Inédit</a>
@@ -42,7 +34,7 @@
         </div>
     </header>
     <main>
-        <div id="main-container"></div>
+        <div id="main-container"><!-- zone mdifier par js --></div>
     </main>
         <footer>
             <div>
@@ -61,7 +53,7 @@
                 <p>&copy; 2025 CINEMATRIQUE. Tous droits réservés. | <a href="./mentions_legales.html">Mentions légales</a> | <a href="./politique_confidentialite.html">Politique de confidentialité</a></p>
             </div>
     </footer>
-    <script src="main.js"></script>
+    <script type="module" src="main.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 </html>

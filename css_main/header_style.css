@@ -58,3 +58,15 @@ div {
     box-shadow: 5px 5px 10px #ffffff27;
 }
 
+.search-container{
+    display: block;
+    font-weight: bold;
+    padding: 1rem 0;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    background-image: radial-gradient(circle at center center, rgba(71,71,71, 0.88),rgb(8,8,8));
+    border: 1px solid #333333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
