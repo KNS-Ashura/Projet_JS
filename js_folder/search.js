@@ -7,8 +7,8 @@ export function fetchMovies(title) {
     .then((response) => response.json())
     .then((data) => {
       if (data.results && data.results.length > 0) {
-        const halfLength = Math.ceil(data.results.length / 2); // Calculer la moitié
-        const firstHalf = data.results.slice(0, halfLength); // Première moitié
+        const halfLength = Math.ceil(data.results.length / 2);
+        const firstHalf = data.results.slice(0, halfLength);
 
         $("#main-container").empty(); 
         $("#second-container").empty();
@@ -85,4 +85,10 @@ export function fetchMovies2(title) {
     .catch((error) => {
       console.error("Erreur:", error);
     });
+}
+
+export function addBtn() {
+  if (!$("#see_more").length) {
+    $("main").append('<button id="see_more">Voir plus</button>');
+  }
 }
