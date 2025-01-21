@@ -28,3 +28,21 @@
     color: white;
     justify-content: center;
 }
+
+#see_more {
+    background-color: #ffa500;
+    color: #ffffff;           
+    border: 2px solid #000000;
+    padding: 10px 20px;     
+    font-size: 16px;        
+    font-weight: bold;      
+    border-radius: 5px;     
+    cursor: pointer;        
+    transition: all 0.3s ease; 
+    margin-left: 46%;
+}
+
+#see_more:hover {
+    background-color: #000000; 
+    color: #ffa500;           
+}

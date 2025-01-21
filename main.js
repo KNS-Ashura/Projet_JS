@@ -1,9 +1,12 @@
 import { fetchMovies } from './js_folder/search.js';
+import { fetchMovies2 } from './js_folder/search.js';
+
+let title = ""; // Déclare une variable globale pour stocker le titre
 
 fetchMovies("Avengers");
 
 searchInput.addEventListener("input", (event) => {
-  const title = event.target.value;
+  title = event.target.value; // Met à jour la variable globale
 
   if (title.trim() === "") {
     fetchMovies("Avengers");
@@ -12,15 +15,8 @@ searchInput.addEventListener("input", (event) => {
   }
 });
 
-const movieItems = document.querySelectorAll('.movie-item');
+const seeMorebtn = document.getElementById('see_more');
 
-movieItems.forEach(item => {
-  item.addEventListener('click', function() {
-    
-    const movieId = this.getAttribute('data-id');
-    
-    console.log('ID du film cliqué :', movieId);
-
-    window.location.href = `./page_html/Movie.html?movie_id=${movieId}`;
-  });
+seeMorebtn.addEventListener('click', () => {
+  fetchMovies2(title); // Utilise la variable globale
 });
