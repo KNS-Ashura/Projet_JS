@@ -5,6 +5,7 @@
     flex-wrap: wrap;
 }
 
+
 .Poster_section {
         border: solid black 5px;
         margin-right: 1.5em;
@@ -14,6 +15,8 @@
         padding: 0%;
         border-radius: 10px;
         overflow: hidden;
+        align-items: center;
+        background-color: #000000;
 }
 
 .Poster {
@@ -23,11 +26,17 @@
     padding: 0;
 }
 
-.Title {
-    font-size: 1em;
-    color: white;
-    justify-content: center;
+.Poster_section a{
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    color: #ffa500;
+    font-style: normal;
+    font-size: 0.90em;
+    
 }
+
+
 
 #see_more {
     background-color: #ffa500;

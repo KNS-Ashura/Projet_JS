@@ -1,17 +1,19 @@
 import { generateMovieUrl } from './hide_key.js';
-import { generateMovieUrl2 } from './hide_key.js';
 
 export function fetchMovies(title) {
-
   const url = generateMovieUrl(title);
-  
+
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
       if (data.results && data.results.length > 0) {
-        $("#main-container").empty();
+        const halfLength = Math.ceil(data.results.length / 2); // Calculer la moitié
+        const firstHalf = data.results.slice(0, halfLength); // Première moitié
 
-        data.results.forEach((movie) => {
+        $("#main-container").empty(); 
+        $("#second-container").empty();
+
+        firstHalf.forEach((movie) => {
           const newDiv = $("<div>", {
             class: "Poster_section",
           });
@@ -25,7 +27,7 @@ export function fetchMovies(title) {
 
           const newTitle = $("<a>", {
             class: "Title",
-            href: `./page_html/Movie.html?Movie_id=${movie.id}`, // Ajouter l'ID du film dans l'URL
+            href: `./page_html/Movie.html?Movie_id=${movie.id}`,
           }).text(movie.title);
 
           newDiv.append(newPoster);
@@ -43,16 +45,16 @@ export function fetchMovies(title) {
 }
 
 export function fetchMovies2(title) {
+  const url = generateMovieUrl(title);
 
-  const url = generateMovieUrl2(title);
-  
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
       if (data.results && data.results.length > 0) {
-        $("#main-container").empty();
+        const halfLength = Math.ceil(data.results.length / 2);
+        const secondHalf = data.results.slice(halfLength);
 
-        data.results.forEach((movie) => {
+        secondHalf.forEach((movie) => {
           const newDiv = $("<div>", {
             class: "Poster_section",
           });
@@ -66,13 +68,15 @@ export function fetchMovies2(title) {
 
           const newTitle = $("<a>", {
             class: "Title",
-            href: `./page_html/Movie.html?Movie_id=${movie.id}`, // Ajouter l'ID du film dans l'URL
+            href: `./page_html/Movie.html?Movie_id=${movie.id}`,
           }).text(movie.title);
 
           newDiv.append(newPoster);
           newDiv.append(newTitle);
 
           $("#main-container").append(newDiv);
+          $("#see_more").remove();
+
         });
       } else {
         console.error("Aucun résultat trouvé.");
