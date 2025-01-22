@@ -16,8 +16,6 @@ searchInput.addEventListener("input", (event) => {
   addBtn();
 });
 
-const seeMorebtn = document.getElementById('see_more');
-
 $("main").on("click", "#see_more", (event) => {
   if (title.trim() === "") {
     title = "Avengers";

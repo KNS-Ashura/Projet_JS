@@ -5,20 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css_main/header_style.css">
     <link rel="stylesheet" href="../css_main/footer.css">
-    <title>Document</title>
+    <title>Détails du Film</title>
 </head>
 <body>
     <header>
         <div id="all-head">
-            <h1 id="top-title">Ciné-phile</h1>
+            <h1 id="top-title">le titre</h1>
             <section id="down_part">
                 <nav>
                     <ul class="menu">
                         <li>
+                            <a href=""></a>
+                        </li>
+                        <li>
                             <a href="#lien_inedit">Inédit</a>
                         </li>
                         <li>
-                            <a href="./Autres_pages/page_support.html" target="_blank">Support</a>
+                            <a href="./Autres_pages/page_support.html" target="_blank">Nous contacter</a>
                         </li>
                     </ul>
                 </nav>
@@ -26,11 +29,15 @@
         </div>
     </header>
     <main>
-        <h1></h1>
-        <div class="poster_place"></div>
-        <p class="resum"></p>
-        <div class="genre"></div>
-        <div class="actors"></div>
+        <h1 id="movie-title">Titre du film</h1>
+        <div id="poster-place">
+            <img id="movie-poster" alt="Affiche du film" />
+        </div>
+        <p id="movie-summary">Résumé du film</p>
+        <div id="movie-genre">Genre : </div>
+        <div id="movie-actors">Acteurs : </div>
+        <div id="movie-ratings">Notes : </div>
+        <div id="movie-dvd-release">Date de sortie en DVD : </div>
     </main>
     <footer>
         <div>
@@ -48,8 +55,8 @@
         <div>
             <p>&copy; 2025 CINEMATRIQUE. Tous droits réservés. | <a href="./mentions_legales.html">Mentions légales</a> | <a href="./politique_confidentialite.html">Politique de confidentialité</a></p>
         </div>
-</footer>
-<script type="module" src="../js_folder/movie.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </footer>
+    <script type="module" src="../js_folder/movie.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 </html>
