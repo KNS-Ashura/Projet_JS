@@ -4,7 +4,7 @@ import { addBtn } from './js_folder/search.js';
 
 let title = "";
 
-fetchMovies("Avengers");
+fetchMovies("the");
 
 searchInput.addEventListener("input", (event) => {
   title = event.target.value;
